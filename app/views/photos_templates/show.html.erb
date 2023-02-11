@@ -13,10 +13,10 @@
 <dd>
     <form action="/update_photo/<%=@matching_photo.id%>">
       <label for="browser_image">Image</label>
-      <input id="browser_image" type="text" name="input_image" placeholder="Enter a URL for the image..." value="https://robohash.org/quodautdistinctio.png?size=300x300&amp;set=set1">
+      <input id="browser_image" type="text" name="input_image" placeholder="Enter a URL for the image..." value="<%=@matching_photo.image%>">
 
       <label for="browser_caption">Caption</label>
-      <textarea id="browser_caption" name="input_caption" placeholder="Enter a caption for the photo...">Winter is coming.</textarea>
+      <textarea id="browser_caption" name="input_caption" placeholder="Enter a caption for the photo..."><%=@matching_photo.caption%></textarea>
 
       <button>Update photo</button>
     </form>
@@ -67,7 +67,7 @@ Posted
 
 <form action="/insert_comment_record">
   <label for="browser_photo_id">Photo ID</label>
-  <input id="browser_photo_id" type="text" value="861" name="input_photo_id">
+  <input id="browser_photo_id" type="text" value="<%=@matching_photo.id%>" name="input_photo_id">
 
   <label for="browser_author_id">Author ID</label>
   <input id="browser_author_id" type="text" name="input_author_id">
